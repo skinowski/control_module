@@ -35,3 +35,6 @@ where
 	70 -> RPI on board MUX
 	77 -> Barometer (BMP085)
 ```
+## TODO
+
+* Move poller to the I/O thread and add a listener socket for vision module
