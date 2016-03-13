@@ -1,3 +1,10 @@
+/*
+ * Copyright (C) 2016 Tolga Ceylan
+ *
+ * CopyPolicy: Released under the terms of the GNU GPL v3.0.
+ * This file incorporates work covered by the following copyright and  
+ * permission notice:
+ */
 /***************************************************
   This is a library for the L3GD20 GYROSCOPE
   Designed specifically to work with the Adafruit L3GD20 Breakout 

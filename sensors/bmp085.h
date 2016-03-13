@@ -1,3 +1,10 @@
+/*
+ * Copyright (C) 2016 Tolga Ceylan
+ *
+ * CopyPolicy: Released under the terms of the GNU GPL v3.0.
+ * This file incorporates work covered by the following copyright and  
+ * permission notice:
+ */
 /***************************************************************************
   This is a library for the BMP085 pressure sensor
   Designed specifically to work with the Adafruit BMP085 or BMP180 Breakout 

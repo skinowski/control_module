@@ -1,3 +1,10 @@
+/*
+ * Copyright (C) 2016 Tolga Ceylan
+ *
+ * CopyPolicy: Released under the terms of the GNU GPL v3.0.
+ * This file incorporates work covered by the following copyright and  
+ * permission notice:
+ */
 //=====================================================================================================
 // MadgwickAHRS.c
 //=====================================================================================================
@@ -9,7 +16,7 @@
 // 29/09/2011   SOH Madgwick    Initial release
 // 02/10/2011   SOH Madgwick    Optimised for reduced CPU load
 // 19/02/2012   SOH Madgwick    Magnetometer measurement is normalised
-// 12/03/2016   Tolga Ceylan    Ported to robot code base
+
 #include "ahrs_mahony.h"
 
 #include <math.h>

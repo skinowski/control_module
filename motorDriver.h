@@ -1,3 +1,10 @@
+/*
+ * Copyright (C) 2016 Tolga Ceylan
+ *
+ * CopyPolicy: Released under the terms of the GNU GPL v3.0.
+ * This file incorporates work covered by the following copyright and  
+ * permission notice:
+ */
 /******************************************************************
  This is the library for the Adafruit Motor Shield V2 for Arduino. 
  It supports DC motors & Stepper motors with microstepping as well

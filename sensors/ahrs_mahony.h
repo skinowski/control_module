@@ -1,3 +1,10 @@
+/*
+ * Copyright (C) 2016 Tolga Ceylan
+ *
+ * CopyPolicy: Released under the terms of the GNU GPL v3.0.
+ * This file incorporates work covered by the following copyright and  
+ * permission notice:
+ */
 //=====================================================================================================
 // MadgwickAHRS.h
 //=====================================================================================================
@@ -8,7 +15,6 @@
 // Date                 Author          Notes
 // 29/09/2011   SOH Madgwick    Initial release
 // 02/10/2011   SOH Madgwick    Optimised for reduced CPU load
-// 12/03/2016   Tolga Ceylan    Ported to robot code base
 #ifndef AHRS_MAHONY_H__
 #define AHRS_MAHONY_H__
 
