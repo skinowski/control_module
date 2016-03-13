@@ -11,6 +11,7 @@ black and now runs on raspberry pi 2 with the following hardware:
 The code is currently in POC/testing state. Incorporating a stereo
 camera module to be used in mapping/localization.
 
+
 ## I2C Addresses
 
 ```
@@ -35,6 +36,19 @@ where
 	70 -> RPI on board MUX
 	77 -> Barometer (BMP085)
 ```
-## TODO
+
+## TODO for short term
 
 * Move poller to the I/O thread and add a listener socket for vision module
+
+* Read battery voltage levels from AtMega and safety shutdown the robot
+
+* Remove any beaglebone black related code.
+
+* Tests for components
+
+## References / Credits
+
+* Madgwick's implementation of Mayhony's AHRS algorithm
+* Adafruit for original Gyro/Accelator/Magnetometer/Barometer/Motor controller reading code
+* Arduino-IDE sources for timer code
