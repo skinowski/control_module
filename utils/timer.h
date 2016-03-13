@@ -1,10 +1,25 @@
 /*
- * timer.h
+ * Copyright (C) 2016 Tolga Ceylan
  *
- *  Created on: Dec 21, 2014
- *      Author: tceylan
+ * CopyPolicy: Released under the terms of the GNU GPL v3.0.
+ * This file incorporates work covered by the following copyright and  
+ * permission notice:
  */
-
+    /*
+    UtilTime.cpp provides time functions
+    Copyright (C) 2014 Intel Corporation
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 2.1 of the License, or (at your option) any later version.
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+    You should have received a copy of the GNU Lesser General Public
+    License along with this library; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+    */
 #ifndef TIMER_H_
 #define TIMER_H_
 

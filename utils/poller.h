@@ -1,10 +1,8 @@
 /*
- * poller.h
+ * Copyright (C) 2016 Tolga Ceylan
  *
- *  Created on: Dec 26, 2014
- *      Author: tceylan
+ * CopyPolicy: Released under the terms of the GNU GPL v3.0.
  */
-
 #ifndef POLLER_H_
 #define POLLER_H_
 

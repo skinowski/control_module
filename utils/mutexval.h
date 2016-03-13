@@ -1,8 +1,8 @@
 /*
- * MutexVal.h
+ * Copyright (C) 2016 Tolga Ceylan
  *
+ * CopyPolicy: Released under the terms of the GNU GPL v3.0.
  */
-
 #ifndef MUTEX_VAL_H__
 #define MUTEX_VAL_H__
 

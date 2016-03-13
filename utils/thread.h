@@ -1,8 +1,8 @@
 /*
- * thread.h
+ * Copyright (C) 2016 Tolga Ceylan
  *
+ * CopyPolicy: Released under the terms of the GNU GPL v3.0.
  */
-
 #ifndef THREAD_H_
 #define THREAD_H_
 

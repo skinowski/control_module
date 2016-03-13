@@ -1,10 +1,8 @@
 /*
- * scheduler.h
+ * Copyright (C) 2016 Tolga Ceylan
  *
- *  Created on: Dec 31, 2014
- *      Author: tceylan
+ * CopyPolicy: Released under the terms of the GNU GPL v3.0.
  */
-
 #ifndef SCHEDULER_H_
 #define SCHEDULER_H_
 

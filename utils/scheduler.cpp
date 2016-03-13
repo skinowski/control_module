@@ -1,10 +1,8 @@
 /*
- * scheduler.cpp
+ * Copyright (C) 2016 Tolga Ceylan
  *
- *  Created on: Dec 31, 2014
- *      Author: tceylan
+ * CopyPolicy: Released under the terms of the GNU GPL v3.0.
  */
-
 #include "scheduler.h"
 #include "logger.h"
 #include "utils.h"

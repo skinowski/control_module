@@ -1,8 +1,8 @@
 /*
- * circarray.h
+ * Copyright (C) 2016 Tolga Ceylan
  *
+ * CopyPolicy: Released under the terms of the GNU GPL v3.0.
  */
-
 #ifndef CIRC_ARRAY_H_
 #define CIRC_ARRAY_H_
 

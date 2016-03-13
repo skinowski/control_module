@@ -1,6 +1,7 @@
 /*
- * utils.h
+ * Copyright (C) 2016 Tolga Ceylan
  *
+ * CopyPolicy: Released under the terms of the GNU GPL v3.0.
  */
 
 #ifndef UTILS_H__
@@ -41,18 +42,7 @@
 
 namespace robo {
 
-int build_sys_path(const char *partial_path, const char *prefix, char *full_path, size_t full_path_len);
-
-int activate_cape_mgr_slot(const char *name);
-int deactivate_cape_mgr_slot(const char *name);
-
 uint64_t soundspeed_usec2cm(uint64_t usec, float temp);
-
-int write_int_to_file(const char *filename, int value);
-int write_buf_to_file(const char *filename, const char *buf, int bufLen);
-
-int open_path(const char *dir1, const char *dir2, int &fd, int flags);
-int write_buf_to_path(const char *dir1, const char *dir2, const char *buf, int bufLen);
 
 template <typename T>
 T clamp(T t1, T min, T max)
