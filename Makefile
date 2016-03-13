@@ -30,7 +30,7 @@ compile_all: $(NAME)
 
 .PHONY: clean
 clean :
-	@rm -f $(OBJECTS) 
+	@rm -f $(OBJECTS) $(NAME)
 	@rm -f $(patsubst %.o, %.d, $(filter %.o,$(OBJECTS)))
 
 -include $(OBJECTS:.o=.d)
