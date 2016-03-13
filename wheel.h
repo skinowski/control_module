@@ -1,10 +1,8 @@
 /*
- * wheel.h
+ * Copyright (C) 2016 Tolga Ceylan
  *
- *  Created on: Dec 18, 2014
- *      Author: tceylan
+ * CopyPolicy: Released under the terms of the GNU GPL v3.0.
  */
-
 #ifndef WHEEL_H_
 #define WHEEL_H_
 

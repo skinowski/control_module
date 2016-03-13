@@ -1,10 +1,8 @@
 /*
- * sensor_state.h
+ * Copyright (C) 2016 Tolga Ceylan
  *
- *      Author: tceylan
+ * CopyPolicy: Released under the terms of the GNU GPL v3.0.
  */
-
-#ifndef SENSOR_STATE_H_
 #define SENSOR_STATE_H_
 
 // sensors

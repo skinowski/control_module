@@ -1,6 +1,8 @@
 /*
+ * Copyright (C) 2016 Tolga Ceylan
+ *
+ * CopyPolicy: Released under the terms of the GNU GPL v3.0.
  */
-
 #include "i2c.h"
 #include "logger.h"
 

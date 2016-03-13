@@ -1,4 +1,8 @@
-
+/*
+ * Copyright (C) 2016 Tolga Ceylan
+ *
+ * CopyPolicy: Released under the terms of the GNU GPL v3.0.
+ */
 #ifndef AHRS_SENSOR_H__
 #define AHRS_SENSOR_H__
 

@@ -1,9 +1,8 @@
 /*
- * encoder.cpp
+ * Copyright (C) 2016 Tolga Ceylan
  *
- *      Author: tceylan
+ * CopyPolicy: Released under the terms of the GNU GPL v3.0.
  */
-
 #include "encoder.h"
 
 #include "logger.h"

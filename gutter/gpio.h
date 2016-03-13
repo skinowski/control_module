@@ -1,9 +1,8 @@
-
 /*
- * pwm.h
+ * Copyright (C) 2016 Tolga Ceylan
  *
+ * CopyPolicy: Released under the terms of the GNU GPL v3.0.
  */
-
 #ifndef GPIO_H_
 #define GPIO_H_
 

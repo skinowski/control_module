@@ -1,8 +1,8 @@
 /*
- * i2c.h
+ * Copyright (C) 2016 Tolga Ceylan
  *
+ * CopyPolicy: Released under the terms of the GNU GPL v3.0.
  */
-
 #ifndef I2C_H_
 #define I2C_H_
 
