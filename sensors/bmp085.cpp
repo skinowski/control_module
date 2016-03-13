@@ -329,9 +329,9 @@ float BMP085::thr_get_pressure(int32_t up)
     b7 = ((uint32_t) (up - b3) * (50000 >> m_mode));
 
     if (b7 < 0x80000000)
-    	p = (b7 << 1) / b4;
+        p = (b7 << 1) / b4;
     else
-    	p = (b7 / b4) << 1;
+        p = (b7 / b4) << 1;
 
     x1 = (p >> 8) * (p >> 8);
     x1 = (x1 * 3038) >> 16;

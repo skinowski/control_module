@@ -21,33 +21,33 @@ namespace robo {
 
 struct SensorState
 {
-	SensorState(float sample_frequency);
+    SensorState(float sample_frequency);
 
-	int update_sensor_state(uint64_t now);
+    int update_sensor_state(uint64_t now);
 
-	void bmp_log(uint64_t last, const BMP085::Reading &sensor, const char *prefix);
-	void ahrs_log(uint64_t last, const ahrs::Sensor &sensor, const char *prefix);
+    void bmp_log(uint64_t last, const BMP085::Reading &sensor, const char *prefix);
+    void ahrs_log(uint64_t last, const ahrs::Sensor &sensor, const char *prefix);
 
-	void ahrs_log_state(uint64_t now);
+    void ahrs_log_state(uint64_t now);
 
-	float get_temperature();
+    float get_temperature();
 
-	ahrs::State			m_state;
+    ahrs::State            m_state;
 
-	ahrs::Sensor 		m_accel;
-	ahrs::Sensor 		m_mag;
-	ahrs::Sensor 		m_gyro;
+    ahrs::Sensor         m_accel;
+    ahrs::Sensor         m_mag;
+    ahrs::Sensor         m_gyro;
 
-	BMP085::Reading 	m_temperature;
-	BMP085::Reading 	m_pressure;
+    BMP085::Reading     m_temperature;
+    BMP085::Reading     m_pressure;
 
-	Encoder::Reading    m_encoder;
+    Encoder::Reading    m_encoder;
 
-	uint64_t 			m_accel_last;
-	uint64_t 			m_mag_last;
-	uint64_t 			m_gyro_last;
-	uint64_t 			m_temperature_last;
-	uint64_t 			m_pressure_last;
+    uint64_t             m_accel_last;
+    uint64_t             m_mag_last;
+    uint64_t             m_gyro_last;
+    uint64_t             m_temperature_last;
+    uint64_t             m_pressure_last;
 };
 
 

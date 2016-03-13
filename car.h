@@ -19,42 +19,42 @@ class SensorState;
 class Car
 {
 public:
-	Car(robo::MotorDriver *driver, SensorState *sensors);
-	~Car();
+    Car(robo::MotorDriver *driver, SensorState *sensors);
+    ~Car();
 
-	void shutdown();
-	int initialize(int left_id, int right_id, uint64_t period);
+    void shutdown();
+    int initialize(int left_id, int right_id, uint64_t period);
 
-	int update(uint64_t now);
+    int update(uint64_t now);
 
-	int turn(int angle);
-	int run(int distance);
+    int turn(int angle);
+    int run(int distance);
 
-	void stop();
-
-private:
-	void reset_state();
-	int update_wheel(robo::Wheel &wheel, int &speed, robo::Pid &pid, bool &isExecute);
-	int update_pid(uint64_t now, Pid &pid_left, Pid &pid_right);
-
-	static int convert_to_speed(const Pid &pid);
+    void stop();
 
 private:
-	robo::MotorDriver *m_driver;
+    void reset_state();
+    int update_wheel(robo::Wheel &wheel, int &speed, robo::Pid &pid, bool &isExecute);
+    int update_pid(uint64_t now, Pid &pid_left, Pid &pid_right);
 
-	robo::SensorState *m_sensors;
+    static int convert_to_speed(const Pid &pid);
 
-	robo::Wheel m_left;
-	robo::Wheel m_right;
+private:
+    robo::MotorDriver *m_driver;
 
-	int m_leftSpeed;
-	int m_rightSpeed;
+    robo::SensorState *m_sensors;
 
-	Pid m_leftPid;
-	Pid m_rightPid;
+    robo::Wheel m_left;
+    robo::Wheel m_right;
 
-	uint64_t m_previous;
-	uint64_t m_period;
+    int m_leftSpeed;
+    int m_rightSpeed;
+
+    Pid m_leftPid;
+    Pid m_rightPid;
+
+    uint64_t m_previous;
+    uint64_t m_period;
 };
 } // namespace robo
 

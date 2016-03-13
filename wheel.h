@@ -15,24 +15,24 @@ namespace robo {
 class Wheel
 {
 public:
-	Wheel(MotorDriver *driver);
-	~Wheel();
-	int initialize(int id);
-	void shutdown();
+    Wheel(MotorDriver *driver);
+    ~Wheel();
+    int initialize(int id);
+    void shutdown();
 
-	int set_speed(int speed);
-
-private:
-	// no copy
-	Wheel(const Wheel &);
-	Wheel& operator=(const Wheel &);
-
-	uint8_t get_dc_speed(int speed);
-	uint8_t get_cmd(int speed);
+    int set_speed(int speed);
 
 private:
-	MotorDriver 		*m_driver;
-	DCMotor 			m_motor;
+    // no copy
+    Wheel(const Wheel &);
+    Wheel& operator=(const Wheel &);
+
+    uint8_t get_dc_speed(int speed);
+    uint8_t get_cmd(int speed);
+
+private:
+    MotorDriver         *m_driver;
+    DCMotor             m_motor;
 };
 
 } // namespace robo

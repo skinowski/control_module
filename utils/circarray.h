@@ -15,51 +15,51 @@ class CircArray
 {
 public:
 
-	CircArray()
-		:
-		m_queue_start(0),
-		m_queue_items(0)
-	{
-	}
+    CircArray()
+        :
+        m_queue_start(0),
+        m_queue_items(0)
+    {
+    }
 
-	int push(const T &t)
-	{
-		if (m_queue_items >= S)
-			return ENOBUFS;
+    int push(const T &t)
+    {
+        if (m_queue_items >= S)
+            return ENOBUFS;
 
-		const size_t idx = (m_queue_start + m_queue_items) % S;
-		m_queue[idx] = t;
-		++m_queue_items;
-		return 0;
-	}
+        const size_t idx = (m_queue_start + m_queue_items) % S;
+        m_queue[idx] = t;
+        ++m_queue_items;
+        return 0;
+    }
 
-	int pop(T &t)
-	{
-		if (m_queue_items == 0)
-			return ENOBUFS;
+    int pop(T &t)
+    {
+        if (m_queue_items == 0)
+            return ENOBUFS;
 
-		t = m_queue[m_queue_start];
+        t = m_queue[m_queue_start];
 
-		m_queue_start = ++m_queue_start % S;
-		--m_queue_items;
-		return 0;
-	}
+        m_queue_start = ++m_queue_start % S;
+        --m_queue_items;
+        return 0;
+    }
 
-	bool empty() const
-	{
-		return m_queue_items == 0;
-	}
+    bool empty() const
+    {
+        return m_queue_items == 0;
+    }
 
-	void clear()
-	{
-		m_queue_items = 0;
-		m_queue_start = 0;
-	}
+    void clear()
+    {
+        m_queue_items = 0;
+        m_queue_start = 0;
+    }
 
 private:
-	T 		m_queue[S];
-	size_t 	m_queue_start;
-	size_t 	m_queue_items;
+    T         m_queue[S];
+    size_t     m_queue_start;
+    size_t     m_queue_items;
 };
 
 } // namespace robo

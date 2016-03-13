@@ -55,16 +55,16 @@ uint64_t Timer::rdtsc()
 
 
 Timer::Timer()
-	:
-	m_start(0)
+    :
+    m_start(0)
 {
 }
 
 // Ported from Arduino-IDE source in hardware/arduino/edison/cores/arduino/UtilTime.cpp
 int Timer::initialize()
 {
-	if (s_cpufreq != 0)
-		return EINVAL;
+    if (s_cpufreq != 0)
+        return EINVAL;
 
 #if defined(__arm__)
         s_cpufreq = 1;
@@ -77,14 +77,14 @@ int Timer::initialize()
     const int cpufreq_fd = open("/proc/cpuinfo", O_RDONLY);
     if( cpufreq_fd < 0)
     {
-    	logger(LOG_ERROR, "unable to open /proc/cpuinfo err=%d", errno);
+        logger(LOG_ERROR, "unable to open /proc/cpuinfo err=%d", errno);
         return errno;
     }
     memset(buf, 0x00, sizeof(buf));
     const int ret = read(cpufreq_fd, buf, sizeof(buf));
     if ( ret < 0 )
     {
-    	logger(LOG_ERROR, "unable to read cpuinfo err=%d!", errno);
+        logger(LOG_ERROR, "unable to read cpuinfo err=%d!", errno);
         close(cpufreq_fd);
         return errno;
     }
@@ -92,7 +92,7 @@ int Timer::initialize()
     char *str = strstr(buf, mhz_str);
     if (!str)
     {
-    	logger(LOG_ERROR, "Buffer %s does not contain CPU frequency info !", buf);
+        logger(LOG_ERROR, "Buffer %s does not contain CPU frequency info !", buf);
         return EFAULT;
     }
 
@@ -112,16 +112,16 @@ int Timer::initialize()
     const double tmp = strtod(str, NULL);
     if (errno == ERANGE && (tmp == -HUGE_VAL || tmp == HUGE_VAL))
     {
-    	logger(LOG_INFO, "cpufrequency strtod failed str=%s", str);
-    	return EFAULT;
+        logger(LOG_INFO, "cpufrequency strtod failed str=%s", str);
+        return EFAULT;
     }
 
     s_cpufreq = tmp;
     if (s_cpufreq == 0)
     {
         s_cpufreq = 1; // set it to 1 to avoid div-zero errors just in case.
-    	logger(LOG_INFO, "cpufrequency is zero! original value=%f", tmp);
-    	return EFAULT;
+        logger(LOG_INFO, "cpufrequency is zero! original value=%f", tmp);
+        return EFAULT;
     }
 
     logger(LOG_INFO, "cpufrequency is %f mhz => %lu", tmp, s_cpufreq);

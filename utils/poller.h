@@ -16,31 +16,31 @@ namespace robo {
 class Poller
 {
 public:
-	Poller();
-	~Poller();
+    Poller();
+    ~Poller();
 
-	// We don't need this dynamic for this project.
-	enum {
-		MAX_POLL_ITEMS = 4,
-	};
+    // We don't need this dynamic for this project.
+    enum {
+        MAX_POLL_ITEMS = 4,
+    };
 
-	typedef void (*Callback)(void *cb_data, int id, int fd, int revents);
+    typedef void (*Callback)(void *cb_data, int id, int fd, int revents);
 
-	int add_entity(int fd, int events, int &id, Callback cb, void *cb_data);
-	int rm_entity(int id);
+    int add_entity(int fd, int events, int &id, Callback cb, void *cb_data);
+    int rm_entity(int id);
 
-	int update(uint64_t maxWait);
+    int update(uint64_t maxWait);
 
-	int initialize();
-	void shutdown();
-
-private:
-	void clear();
+    int initialize();
+    void shutdown();
 
 private:
-	Callback 		m_cb[MAX_POLL_ITEMS];
-	void *			m_cb_data[MAX_POLL_ITEMS];
-    struct pollfd 	m_fd[MAX_POLL_ITEMS];
+    void clear();
+
+private:
+    Callback         m_cb[MAX_POLL_ITEMS];
+    void *            m_cb_data[MAX_POLL_ITEMS];
+    struct pollfd     m_fd[MAX_POLL_ITEMS];
 };
 
 } // namespace robo

@@ -16,13 +16,13 @@ namespace robo {
 
 uint64_t soundspeed_usec2cm(uint64_t usec, float temp)
 {
-	// TODO: adjust for temperature!
-	// The speed of sound is 340 m/s or 29 microseconds per centimeter.
-	// The ping travels out and back, so to find the distance of the
-	// object we take half of the distance travelled.
-	// http://www.parallax.com/sites/default/files/downloads/28015-PING-Documentation-v1.6.pdf
-	const float speed = 331.5f + (0.6f * temp); // m/sec
-	return usec / (10000.0f / speed);
+    // TODO: adjust for temperature!
+    // The speed of sound is 340 m/s or 29 microseconds per centimeter.
+    // The ping travels out and back, so to find the distance of the
+    // object we take half of the distance travelled.
+    // http://www.parallax.com/sites/default/files/downloads/28015-PING-Documentation-v1.6.pdf
+    const float speed = 331.5f + (0.6f * temp); // m/sec
+    return usec / (10000.0f / speed);
 }
 
 int write_int_to_file(const char *filename, int value)
@@ -79,23 +79,23 @@ int write_buf_to_file(const char *filename, const char *buf, int bufLen)
 
 int build_sys_path(const char *partial_path, const char *prefix, char *full_path, size_t full_path_len)
 {
-	logger(LOG_INFO, "building sys path for dir=%s prefix=%s", partial_path, prefix);
+    logger(LOG_INFO, "building sys path for dir=%s prefix=%s", partial_path, prefix);
 
-	int ret = EBADF;
+    int ret = EBADF;
     DIR *dp = ::opendir(partial_path);
     if (dp == NULL) 
-    	return errno;
+        return errno;
 
     while (1)
     {
-	    errno = 0;
-    	struct dirent *ep = ::readdir(dp);
-    	if (ep == NULL)
-    	{
-	    	if (errno)
-	    		ret = errno;
-		    break;
-    	}
+        errno = 0;
+        struct dirent *ep = ::readdir(dp);
+        if (ep == NULL)
+        {
+            if (errno)
+                ret = errno;
+            break;
+        }
 
         // Enforce that the prefix must be the first part of the file
         const char *found_string = strstr(ep->d_name, prefix);
@@ -113,31 +113,31 @@ int build_sys_path(const char *partial_path, const char *prefix, char *full_path
 
 static int get_capemgr_slot_file(FILE *&file)
 {
-	char ctrl_dir[256] = { 0 };
+    char ctrl_dir[256] = { 0 };
     int ret = build_sys_path("/sys/devices", "bone_capemgr", ctrl_dir, sizeof(ctrl_dir));
     if (ret)
-    	return ret;
+        return ret;
 
     char *end = ctrl_dir + strlen(ctrl_dir);
     if ((end - ctrl_dir) >= sizeof(ctrl_dir))
-    	return EFAULT;
+        return EFAULT;
 
     snprintf(end, sizeof(ctrl_dir) - (end - ctrl_dir), "/slots");
 
     file = fopen(ctrl_dir, "r+");
     if (!file) 
-    	return errno;
+        return errno;
     return 0;
 }
 
 int activate_cape_mgr_slot(const char *name)
 {
-	logger(LOG_INFO, "activating capemgr slot name=%s", name);
+    logger(LOG_INFO, "activating capemgr slot name=%s", name);
 
     FILE *file = 0;
     int ret = get_capemgr_slot_file(file);
     if (ret) 
-    	return ret;
+        return ret;
 
     bool isLoaded = false;
     char line[256];
@@ -146,26 +146,26 @@ int activate_cape_mgr_slot(const char *name)
         //the device is already loaded?
         if (strstr(line, name)) 
         {
-        	isLoaded = true;
-        	break;
+            isLoaded = true;
+            break;
         }
     }
 
     //if the device isn't already loaded, load it, and return
     if (!isLoaded)
-	    fprintf(file, "%s", name);
+        fprintf(file, "%s", name);
     fclose(file);
     return 0;
 }
 
 int deactivate_cape_mgr_slot(const char *name)
 {
-	logger(LOG_INFO, "de-activating capemgr slot name=%s", name);
+    logger(LOG_INFO, "de-activating capemgr slot name=%s", name);
 
     FILE *file = 0;
     int ret = get_capemgr_slot_file(file);
     if (ret) 
-    	return ret;
+        return ret;
 
     char line[256];
     while (fgets(line, sizeof(line), file)) 

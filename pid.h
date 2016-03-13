@@ -13,20 +13,20 @@ namespace robo {
 
 struct Pid
 {
-	int id;
+    int id;
 
-	double Kp;
-	double Ki;
-	double Kd;
+    double Kp;
+    double Ki;
+    double Kd;
 
-	double error;		// last error
-	uint64_t time;		// last time
-	double integral;	
+    double error;        // last error
+    uint64_t time;        // last time
+    double integral;    
 
-	int target;		// target state
-	int actual;		// current state
+    int target;        // target state
+    int actual;        // current state
 
-	double output;		// output (energy)
+    double output;        // output (energy)
 };
 
 void pid_init(Pid &pid, int id, double kp, double ki, double kd);

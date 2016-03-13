@@ -49,12 +49,12 @@ I2C::~I2C()
 
 void I2C::shutdown()
 {
-	logger(LOG_INFO, "i2c shutting down");
-	if (m_fd != -1)
-	{
-		HANDLE_EINTR(::close(m_fd));
-		m_fd = -1;
-	}
+    logger(LOG_INFO, "i2c shutting down");
+    if (m_fd != -1)
+    {
+        HANDLE_EINTR(::close(m_fd));
+        m_fd = -1;
+    }
 }
 
 int I2C::initialize(int bus)
@@ -63,7 +63,7 @@ int I2C::initialize(int bus)
     if (m_fd != -1)
     {
         logger(LOG_ERROR, "i2c already initialized bus=%d", bus);
-		    return EINVAL;
+        return EINVAL;
     }
 
     char filepath[32];
@@ -80,7 +80,7 @@ int I2C::initialize(int bus)
 int I2C::i2c_set_slave_address(int address)
 {
     if (m_fd == -1)
-		    return EBADF;
+        return EBADF;
 
     const int res = HANDLE_EINTR(::ioctl(m_fd, I2C_SLAVE_FORCE, address));
     return res ? errno : 0;
@@ -88,10 +88,10 @@ int I2C::i2c_set_slave_address(int address)
 
 int I2C::i2c_write(const uint8_t *data, int length)
 {
-  	if (m_fd == -1)
-     		return EBADF;
-  	if (length > I2C_SMBUS_BLOCK_MAX + 1)
-  	   	return EFBIG;
+    if (m_fd == -1)
+        return EBADF;
+    if (length > I2C_SMBUS_BLOCK_MAX + 1)
+        return EFBIG;
 
     union i2c_smbus_data msg;
     
@@ -108,11 +108,11 @@ int I2C::i2c_write(const uint8_t *data, int length)
 
 int I2C::i2c_read(uint8_t *data, int length, int &read_length)
 {
-  	const int res = HANDLE_EINTR(::read(m_fd, data, length));
-  	if (res < 0)
-     		return errno;
-  	read_length = res;
-  	return 0;
+    const int res = HANDLE_EINTR(::read(m_fd, data, length));
+    if (res < 0)
+        return errno;
+    read_length = res;
+    return 0;
 }
 
 int I2C::i2c_read8(int addr, uint8_t reg, uint8_t *value)
